@@ -1,0 +1,725 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Scandi
+ * @version 	1.0.3
+ * 
+ * Yith WooCommerce Wishlist CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+
+
+@import "../../../../../../theme-framework/theme-style/css/less/general.less";
+ 
+
+/*-------------------------------------------------------------------------
+
+	1. 	Free Version
+		1.1 Button Wishlist In Product
+		1.2 Button Wishlist In Open Product
+		1.3 Wishlist Table
+	2. 	Premium Version
+		2.1 Wishlist Table
+		2.2 Create New Wishlist
+		2.3 Manage Wishlist
+		2.4 Search Wishlist
+		2.5 Wishlist Popup
+
+-------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------*/
+/*	1. Free Version */
+/*-------------------------------------------------------------------------*/
+
+/***************** 1.1 Button Wishlist In Product ******************/
+.cmsmasters_theme_icon_wishlist:before {content:'\e889';}
+
+.products {
+	.product {
+		.cmsmasters_add_wishlist_button {
+			.fr;
+			padding:0;
+
+			.puzzle & {
+				div {
+					height:100%;
+				}
+			}
+			
+			.cmsmasters_product_category_shortcode.puzzle & {
+				margin:0;
+				width:58px;
+				height:100%;
+			}
+			
+			+ a,
+			+ a.added + a {
+			}
+			
+			a {
+				padding:0;
+				position:relative;
+				border-radius:50%;
+				
+				&:before {
+					line-height:1em;
+					.pos_abs(1em, 1em, 0, 0, 2px);
+					font-size:15px;
+				}
+				
+				&.add_to_wishlist {
+					z-index:2;
+				}
+				
+				.cmsmasters_product_category_shortcode.puzzle & {
+					width:58px;
+					height:100%;
+				}
+			}
+			
+			.yith-wcwl-add-button {
+				position:relative;
+				height:100%;
+				
+				img {
+					min-width:none;
+					z-index:2;
+					width:36px;
+					height:36px;
+					position: absolute;
+				    left: 0;
+				    right: 0;
+				    margin: auto;
+				    top: 0;
+				    bottom: 0;
+				    border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+
+.puzzle {
+	.yith-wcwl-wishlistexistsbrowse.show {
+		width:58px;
+		height:100%;
+	}
+
+	.button,
+	button {
+		border:none;
+	}
+}
+
+/***************** 1.2 Button Wishlist In Open Product ******************/
+#yith-wcwl-popup-message {
+	display:none !important;
+}
+
+.yith-wcwl-add-to-wishlist {
+    position:relative;
+    margin:0;
+    float:left;
+    padding: 0 20px 0 0;
+
+	&:after {
+    	position:absolute;
+    	content:'';
+		width:1px;
+		height:18px;
+		right:0;
+		top:5px;
+	}
+
+	+ .clear {
+		clear:none;
+	}
+
+	.yith-wcwl-wishlistexistsbrowse {
+		span {
+			display:block; 
+		}
+	}
+	
+	.yith-wcwl-add-button {
+		a.add_to_wishlist {
+			border:none;
+			background:none;
+			padding:0;
+			.bdrs(0);
+
+			&:before {
+				content:'\e838';
+				font-family:"fontello-custom";
+				margin-right:8px;
+			}
+			
+			&.button {
+				i {
+					float:right;
+					margin:0 0 0 10px;
+				}
+			}
+
+			> i {
+				.dn;
+			}
+		}
+	}
+}
+
+.thumbnails  + .yith-wcwl-add-to-wishlist,
+.cmsmasters_woo_tabs  + .yith-wcwl-add-to-wishlist {
+	margin:30px 0 0;
+}
+
+
+/***************** 1.3 Wishlist Table ******************/
+#yith-wcwl-form {
+	h2  {
+		margin-bottom:30px;
+	}
+	
+	&.woocommerce {
+		table.wishlist_table {
+			font-size:inherit;
+			
+			thead {
+				th {
+					position:relative;
+					padding:15px 20px;
+				}
+			}
+			
+			tbody {
+				td {
+					.tal;
+					padding:13px 20px;
+					
+					&.product-remove {
+						width:30px;
+						padding-left:10px;
+						padding-right:10px;
+					}
+					
+					&.product-thumbnail {
+						padding-left:0;
+						padding-right:0;
+						
+						a {
+							max-width:none;
+							
+							img {
+								width:60px;
+								max-width:none;
+								image-rendering:auto;
+							}
+						}
+					}
+					
+					&.product-name {
+						a {
+							dispaly:inline-block;
+							vertical-align:middle;
+							position:relative;
+							
+							&.yith-wcqv-button {
+								display:none;
+							}
+							
+							&:not([class]) + .yith-wcqv-button {
+								margin:0 0 0 20px;
+							}
+						}
+					}
+					
+					&.product-price {
+						ins,
+						del {
+							display:inline-block;
+							vertical-align:bottom;
+						}
+						
+						ins {
+							text-decoration:none;
+						}
+					}
+					
+					&.product-add-to-cart {
+						.tac;
+						
+						> span {
+							padding:0 0 5px 0;
+						}
+						
+						> a {
+							width:50% - @col_mar;
+							margin:0 @col_mar 0 0;
+							padding:0 20px;
+							.bdrs(0);
+							.fl;
+							
+							&:last-child {
+								display:inline-block !important;
+								float:none;
+								width:auto;
+								margin:0;
+								
+								&.added_to_cart {
+									display:none !important;
+								}
+							}
+							
+							+ a.button {
+								width:50% - @col_mar;
+								margin:0 0 0 @col_mar;
+								.fl;
+							}
+						}
+					}
+				}
+			}
+			
+			tfoot {
+				td {
+					.ask-an-estimate-button-container {
+						.fr;
+						
+						.button {
+							padding:0 20px;
+							.bdrs(0);
+						}
+					}
+					
+					.yith-wcwl-share {
+						margin:0;
+						padding:5px 17px;
+						.cl;
+					}
+					
+					.yith-wcwl-share-title {
+						display:inline-block;
+						margin:0;
+						vertical-align:middle;
+						
+						+ ul {
+							margin:0 0 0 35px;
+						}
+					}
+					
+					ul {
+						display:inline-block;
+						height:auto;
+						margin:0;
+						vertical-align:middle;
+						
+						li {
+							display:inline-block;
+							margin:0;
+							padding:0;
+							vertical-align:middle;
+							
+							&:before {
+								content:none;
+							}
+							
+							a {
+								background-image:none;
+								
+								&:before {
+									font-family:'fontello';
+									line-height:1em;
+									.pos_abs();
+								}
+								
+								&.facebook:before {
+									content:'\ea58';
+								}
+								
+								&.twitter:before {
+									content:'\ea97';
+								}
+								
+								&.pinterest:before {
+									content:'\ea7b';
+								}
+								
+								&.googleplus:before {
+									content:'\ea64';
+								}
+								
+								&.email:before {
+									content:'\e8a5';
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.wishlist_table {
+	.add_to_cart.button {
+		white-space:nowrap;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/*	2. Premium Version */
+/*-------------------------------------------------------------------------*/
+
+/***************** 2.1 Wishlist Table ******************/
+#yith-wcwl-form {
+	&.woocommerce {
+		table.wishlist_table {
+			&.cart {
+				tbody {
+					td {
+						&.product-add-to-cart {
+							> a {
+								display:inline-block !important;
+								float:none;
+								width:auto;
+							}
+							
+							&.added_to_cart {
+								display:none !important;
+							}
+						}
+					}
+				}
+			}
+			
+			tbody {
+				td {
+					&.product-checkbox {
+						&:after {
+							content:'';
+							display:table-cell;
+							height:100%;
+							vertical-align:middle;
+						}
+						
+						input {
+							display:inline-block;
+							vertical-align:middle;
+						}
+					}
+					
+					&.product-add-to-cart {
+						> a {
+							width:50% - (@col_mar * 2);
+							margin:0 @col_mar;
+							padding:0 20px;
+							.bdrs(0);
+							.fl;
+							
+							&:last-child {
+								display:inline-block !important;
+								float:none;
+								width:auto;
+							}
+							
+							&.selectBox  {
+								padding:0 30px 0 10px;
+								.tal;
+								
+								> span {
+									padding:4px 8px 2px;
+								}
+								
+								+ a.button {
+									width:100% - (@col_mar * 2);
+									float:none;
+									margin:10px @col_mar 0;
+								}
+							}
+							
+							+ a.button {
+								width:50% - (@col_mar * 2);
+								margin:0 @col_mar;
+								.fl;
+							}
+							
+							+ select + a.selectBox  {
+								width:50% - (@col_mar * 2) !important;
+							}
+						}
+						
+						> .dateadded + select + a.selectBox,
+						> select:first-child + a.selectBox {
+							width:50% - (@col_mar * 2) !important;
+							
+							+ a.button {
+								width:50% - (@col_mar * 2);
+								margin:0 @col_mar;
+							}
+						}
+					}
+				}
+			}
+			
+			.custom-add-to-cart-button-cotaniner {
+				.fl;
+				margin-right:20px;
+			}
+
+			tfoot {
+				td {
+					padding:0; 
+					margin:0 -1px; 
+				}
+			}
+		}
+	}
+}
+
+
+/***************** 2.2 Create New Wishlist ******************/
+#yith-wcwl-form {
+	padding:10px 30px 0; 
+
+	.yith-wcwl-wishlist-new {
+		margin:0 0 55px;
+		padding:20px 0;
+		
+		label {
+			display:block;
+			margin:0;
+		}
+		
+		input[type="text"] {
+			margin:8px 20px 0 0;
+			.bdrs(0);
+		}
+		
+		.selectBox {
+			padding:5px 0;
+			margin:8px 0 0;
+			.bdrs(0);
+		}
+		
+		button {
+			display:block;
+			margin:20px 0;
+			padding:0 20px;
+			.bdrs(0);
+			
+			i {
+				margin:0;
+				
+				&:before {
+					margin:0 10px 0 0;
+				}
+			}
+		}
+	}
+}
+
+
+/***************** 2.3 Manage Wishlist ******************/
+#yith-wcwl-form {
+	.wishlist_manage_table {
+		td,
+		th {
+			padding:13px 25px;
+		}
+		
+		thead {
+			th {
+				padding:15px 25px;
+			}
+		}
+		
+		tfoot {
+			td {
+				padding:13px 25px;
+			}
+			
+			.button,
+			button {
+				padding-top:0;
+				padding-bottom:0;
+				.fl;
+				.bdrs(0);
+				
+				i {
+					margin:0;
+					
+					&:before {
+						margin:0 10px 0 0;
+					}
+				}
+			}
+			
+			.button + button {
+				margin:0 0 0 20px;
+			}
+		}
+		
+		.submit-wishlist-changes {
+			border-color:inherit;
+		}
+	}
+}
+
+.woocommerce {
+	a.selectBox {
+		.bdrs(0);
+		padding:5px 0;
+	}
+	
+	.selectBox-dropdown-menu {
+		.bdrs(0);
+	}
+	
+	.selectBox-options {
+		li {
+			&:before {
+				content:none;
+			}
+			
+			a {
+				.bdrs(0);
+			}
+		}
+	}
+}
+
+
+/***************** 2.4 Search Wishlist ******************/
+#yith-wcwl-form {
+	.yith-wcwl-wishlist-search-form {
+		margin:0 0 55px;
+		padding:30px 0;
+		position:relative;
+		.ovh;
+		
+		#wishlist_search {
+			float:none;
+			height:@input_height;
+			display:block;
+			.bdrs(0);
+		}
+		
+		.wishlist-search-button {
+			float:none;
+			margin:20px 0 0;
+			padding:0 20px;
+			.bdrs(0);
+			
+			i {
+				margin:0;
+				
+				&:before {
+					margin:0 10px 0 0;
+				}
+			}
+		}
+	}
+}
+
+
+/***************** 2.5 Wishlist Popup ******************/
+.wishlist-ask-an-estimate-popup {
+	position:relative;
+	.ovh;
+	
+	label {
+		display:block;
+		margin:0 0 8px;
+	}
+	
+	textarea {
+		display:block;
+		width:100%;
+		margin:0 0 20px;
+	}
+	
+	.ask-an-estimate-button-popup {
+		display:block;
+		margin:0 !important;
+		.fl;
+		
+		i:before {
+			margin:0 10px 0 0;
+		}
+	}
+}
+
+.yes-js {
+	.pp_woocommerce {
+		.yith-wcwl-popup-content {
+			.yith-wcwl-wishlist-select-container,
+			.yith-wcwl-visibility {
+				select {
+					height:@input_height;
+					.bdrs(0);
+					font-weight:inherit;
+				}
+			}
+			
+			.yith-wcwl-popup-new {
+				.tal;
+				
+				label {
+					margin-right:15px;
+					font-weight:inherit;
+				}
+				
+				input {
+					height:@input_height;
+					.bdrs(0);
+				}
+			}
+		}
+		
+		.yith-wcwl-popup-footer {
+			> .yith-wcwl-popup-button {
+				> .popup_button {
+					margin:0 10px 0 0;
+					.fl;
+				}
+			}
+		}
+	}
+}
+
+
+/***************** 2.6 Wishlist Widget ******************/
+.widget_yith-wcwl-lists {
+	.wishlist-dropdown-toggle {
+		word-break:break-all;
+	}
+	
+	ul.dropdown {
+		margin:0;
+		padding:0;
+		
+		li {
+			position:relative;
+			
+			&:before {
+				content:none;
+			}
+			
+			a {
+				padding:13px 0;
+				.bdb;
+			}
+			
+			&.lists-section {
+				.bd(0);
+			}
+		}
+		
+		ul.lists > li a {
+			padding:13px 0;
+		}
+	}
+}

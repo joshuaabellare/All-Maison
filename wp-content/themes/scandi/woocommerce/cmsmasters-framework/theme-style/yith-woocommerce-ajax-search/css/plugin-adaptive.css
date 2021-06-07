@@ -1,0 +1,49 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Scandi
+ * @version 	1.0.0
+ * 
+ * Responsive Design Yith WooCommerce Ajax Search CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+@media only screen {
+  /*-------------------------------------------------------------------------*/
+  /*	Small Tablet Monitor
+	/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Phone Monitor
+	/*-------------------------------------------------------------------------*/
+}
+@media only screen and (max-width: 768px) {
+  .cmsmasters_header_search_form .search-navigation_wrap {
+    height: 70px;
+  }
+  .cmsmasters_header_search_form .search-navigation_wrap input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .yith-ajaxsearchform-container.cmsmasters_ajax_search_free #yith-ajaxsearchform > div {
+    height: 70px;
+  }
+  .yith-ajaxsearchform-container.cmsmasters_ajax_search_free #yith-ajaxsearchform > div input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .cmsmasters_header_search_form .search-navigation_wrap {
+    height: 50px;
+  }
+  .cmsmasters_header_search_form .search-navigation_wrap input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .yith-ajaxsearchform-container.cmsmasters_ajax_search_free #yith-ajaxsearchform > div {
+    height: 50px;
+  }
+  .yith-ajaxsearchform-container.cmsmasters_ajax_search_free #yith-ajaxsearchform > div input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

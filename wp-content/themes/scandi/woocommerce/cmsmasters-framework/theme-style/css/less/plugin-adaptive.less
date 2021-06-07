@@ -1,0 +1,642 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Scandi
+ * @version 	1.0.0
+ * 
+ * WooCommerce Responsive CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+
+
+
+@import "../../../../../theme-framework/theme-style/css/less/general.less";
+
+
+@media only screen {
+/*-------------------------------------------------------------------------*/
+/* Large Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_large {
+	ul.order_details {
+		li {
+			padding:15px 30px;
+			
+			> span {
+				margin:-15px -30px -15px;
+				padding:15px 30px;
+			}
+			
+			strong {
+				margin:15px -30px -15px;
+				padding:15px 30px;
+			}
+		}
+	}
+
+	.widget_shopping_cart {
+		.cart_list {
+			img {
+				position:absolute !important;
+				width: 60px !important;
+    			height: 60px !important;
+    			padding-bottom:0 !important;
+			}
+
+			li {
+	    		padding: 0px 25px 7px 75px !important;
+			}
+		}
+	}  
+
+	.widget_shopping_cart .buttons .button {
+		width:auto !important;
+		
+		&.checkout {
+			margin-left:9px !important;
+		}
+	}
+}
+
+/*-------------------------------------------------------------------------*/
+/* Medium Large Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_medium_large {
+	.widget_product_search {
+		padding:30px 12px;
+	}
+
+	.cmsmasters_product {
+		.cmsmasters_product_but_wrap {
+			right:20px; 
+
+			*[class*="button"] {
+				width:40px; 
+				height:40px; 
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------------------------------*/
+/* Medium Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_medium {
+	.cmsmasters_products {
+		outline:none;
+	}
+
+	.widget_shopping_cart .cart_list img {
+	    width: 100%;
+	    height: auto;
+	    position: relative;
+	    padding-bottom:10px;
+	}
+
+	.widget_shopping_cart .cart_list li {
+	    padding: 0px 25px 7px 0;
+	}
+
+	.widget_shopping_cart .buttons .button {
+		width:100%;
+		margin-left:0;
+		padding:0 13px;
+
+		&.checkout {
+			margin-left:0;
+		}
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Tablet Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet {
+	.cmsmasters_product_category_shortcode.grid .woocommerce,
+	.cmsmasters_products {
+		&.columns-6 .product {
+			width:round((100% / 3), 2);
+			
+			&:nth-child(6n+1) {
+				clear:none;
+			}
+			
+			&:nth-child(3n+1) {
+				clear:left;
+			}
+		}
+		
+		&.columns-5 .product {
+			width:round((100% / 3), 2);
+			
+			&:nth-child(5n+1) {
+				clear:none;
+			}
+			
+			&:nth-child(3n+1) {
+				clear:left;
+			}
+		}
+		
+		&.columns-4 .product {
+			width:round((100% / 2), 2);
+			
+			&:nth-child(4n+1) {
+				clear:none;
+			}
+			
+			&:nth-child(2n+1) {
+				clear:left;
+			}
+		}
+	}
+	
+	.cmsmasters_dynamic_cart .cmsmasters_dynamic_cart_button_hide,
+	.cmsmasters_dynamic_cart_wrap .widget_shopping_cart_content {
+		.dn;
+	}
+	
+	ul.order_details {
+		.flex_wrap(wrap);
+		
+		li {
+			width:50%;
+			
+			&:nth-child(5) {
+				width:100%;
+			}
+		}
+	}
+
+	.widget_shopping_cart .cart_list img {
+	    width: 100%;
+	    height: auto;
+	    position: relative;
+	    padding-bottom:10px;
+	}
+
+	.widget_shopping_cart .cart_list li {
+	    padding: 0px 25px 7px 0;
+	}
+
+	.widget_shopping_cart .buttons .button {
+		width:100%;
+		margin-left:0;
+
+		&.checkout {
+			margin-left:0;
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/* Small Tablet Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet_small {
+	.header_mid {
+		.cmsmasters_dynamic_cart_wrap,
+		.cmsmasters_wishlist_wrap {
+			float:none;
+			display:inline-block;
+			vertical-align:middle;
+			margin-bottom:20px;
+		}
+	}
+	
+	.mid_search_but_wrap {
+		+ .cmsmasters_dynamic_cart_wrap {
+			padding-right:0;
+			margin-left:18px;
+			
+			&:before {
+				right:auto;
+				left:0;
+			}
+		}
+	}
+	
+	.col2-set {
+		> * {
+			width:round(100% - (@col_mar * 2), 2);
+			margin-bottom:40px;
+			float:none;
+			.cl;
+			
+			&:last-child {
+				margin-bottom:0;
+			}
+		}
+	}
+	
+	.shop_table.cart {
+		display:block;
+		.tac;
+		.ovh;
+		.bd;
+		
+		tbody, 
+		tr, 
+		th, 
+		td {
+			display:block;
+			.tac;
+			.ovh;
+		}
+		
+		thead {
+			.dn;
+		}
+		
+		.cart_item {
+			padding:20px 0;
+			position:relative;
+			.bdb;
+			.bxsh_white(0, 2px, 0, 0, .7);
+		}
+		
+		td {
+			padding:15px;
+			.bd(0);
+			.bxsh_none;
+		}
+		
+		.product-remove {
+			padding:0;
+			position:absolute;
+			left:auto;
+			right:0;
+			top:20px;
+			z-index:1;
+		}
+		
+		.product-thumbnail {
+			width:auto;
+			padding-left:0;
+			padding-right:0;
+			.tac;
+		}
+		
+		.product-price, 
+		.product-quantity, 
+		.product-subtotal {
+			display:inline-block;
+			width:33.33%;
+			margin:0 -2px;
+			vertical-align:middle;
+		}
+		
+		.product-price {
+			.tar;
+		}
+		
+		.product-quantity {
+			padding-left:0;
+			padding-right:0;
+		}
+		
+		.product-subtotal {
+			.tal;
+		}
+		
+		.actions {
+			.tac;
+			
+			.coupon {
+				padding:0 0 20px;
+				float:none;
+				.tac;
+			}
+			
+			.input-text {
+				display:block;
+				margin:0 auto 10px;
+			}
+		}
+	}
+	
+	.shop_table.woocommerce-checkout-review-order-table, 
+	.shop_table.order_details {
+		th, 
+		td {
+			padding:10px 15px;
+		}
+	}
+	
+	.cart_totals {
+		table {
+			width:100%;
+		}
+	}
+	
+	ul.order_details {
+		li {
+			padding:10px 15px;
+			position:relative;
+			.fl;
+			.ovh;
+			
+			&:before {
+				content:none;
+			}
+			
+			strong {
+				display:block;
+				margin:10px -15px -10px;
+				padding:10px 15px;
+			}
+		}
+	}
+
+	.cmsmasters_woo_tabs {
+		.tabs_mode_tab& {
+			.cmsmasters_tabs_list {
+				.justify_content(space-between);
+				.flex_direction(column);
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*	Tablet Monitor 950
+/*-------------------------------------------------------------------------*/
+
+@media @monitor_tablet_950 {
+	.widget_shopping_cart {
+		.cart_list {
+			img {
+				position:absolute;
+				width: 60px;
+    			height: 60px;
+    			padding-bottom:0;
+			}
+
+			li {
+	    		padding: 0px 25px 7px 75px;
+			}
+		}
+	}  
+
+	.widget_shopping_cart .buttons .button {
+		width:auto;
+		
+		&.checkout {
+			margin-left:9px;
+		}
+	}
+
+	.yith-wcwl-add-to-wishlist + .clear {
+		clear:both !important;
+	}
+
+	.cmsmasters_single_product {
+		.product_meta {
+			max-width:100%;
+		}
+
+		.share_posts,
+		.product_meta {
+			padding: 0;
+		    margin: 20px 0 0;
+		}
+	} 
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*	Tablet Small Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet_small {
+	.woocommerce-notices-wrapper {
+		.woocommerce-message {
+			.tac;
+
+			.button {
+				display:block;
+				max-width:250px;
+			}
+		}
+	}
+
+	.woocommerce-message {
+		display:-webkit-flex;
+		display:-moz-flex;
+		display:-ms-flex;
+		display:flex;
+		-webkit-align-items:center;
+		-moz-align-items:center;
+		-ms-align-items:center;
+		align-items:center;
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/*	Tablet Monitor 600
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet_600 {
+	.cmsmasters_product_category_shortcode.grid .woocommerce,
+	.cmsmasters_products {
+		&.columns-6 .product,
+		&.columns-5 .product,
+		&.columns-3 .product {
+			width:round((100%), 2);
+			float:none;
+			
+			&:nth-child(n) {
+				.cl;
+			}
+		}
+	}
+	
+	.cmsmasters_single_product {
+		.cmsmasters_product_left_column {
+			width:100%;
+			max-width:500px;
+			float:none;
+			padding:0 0 40px;
+		}
+		
+		.cmsmasters_product_right_column {
+			width:100%;
+			float:none;
+			padding:0;
+		}
+	}
+
+	.cmsmasters_woo_tabs {
+		padding:25px; 
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Phone Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_phone {
+	.cmsmasters_product_category_shortcode.grid .woocommerce,
+	.cmsmasters_products {
+		&.columns-6 .product, 
+		&.columns-5 .product, 
+		&.columns-4 .product, 
+		&.columns-3 .product, 
+		&.columns-2 .product {
+			width:round((100%), 2);
+			float:none;
+			
+			&:nth-child(n) {
+				.cl;
+			}
+		}
+	}
+	
+	.form-row {
+		width:round(100% - (@col_mar * 2), 2);
+		float:none;
+		.cl;
+	}
+	
+	.wc-proceed-to-checkout {
+		.flex_direction(column);
+	}
+	
+	.wc-proceed-to-checkout .wcppec-checkout-buttons .wcppec-checkout-buttons__separator {
+		display:block;
+		margin:10px 0 10px 0;
+		.tac;
+	}
+	
+	.woocommerce-notices-wrapper {
+		.woocommerce-message {
+			.tac;
+
+			.button {
+				display:block;
+				margin:0 auto 20px;
+				max-width:250px;
+			}
+		}
+	}
+	
+	.woocommerce-message, 
+	.woocommerce-info {
+		display:block;
+		.tac;
+	
+		.button {
+			display:block;
+			margin-right:0;
+			margin-bottom:15px;
+			.tac;
+		}
+	}
+	
+	table.variations {
+		select {
+			display:block;
+		}
+		
+		.reset_variations {
+			display:inline-block;
+			margin:10px 0 0;
+		}
+	}
+	
+	.cmsmasters_woo_wrap_result {
+		.woocommerce-result-count {
+			padding:0 10px 20px;
+			float:none;
+			.tac;
+		}
+		
+		.woocommerce-ordering {
+			float:none;
+		}
+	}
+	
+	.cmsmasters_single_product {
+		.cmsmasters_product_thumbs {
+			.cmsmasters_product_thumb {
+				width:60px;
+			}
+		}
+		
+		.cmsmasters_product_info_wrap {
+			float:none;
+			padding:0 0 30px;
+			.tal;
+		}
+		
+		.price {
+			.tal;
+		}
+		
+		.cmsmasters_star_rating {
+			float:none;
+		}
+	}
+	
+	.woocommerce-checkout-payment {
+		padding:20px 15px;
+		
+		.place-order {
+			.terms {
+				display:block;
+				padding:15px 0 0;
+			}
+		}
+	}
+	
+	ul.order_details {
+		li {
+			width:100%;
+			float:none;
+		}
+	}
+	
+	.cmsmasters_comment_item {
+		.cmsmasters_comment_item_header {
+			float:none;
+		}
+		
+		.cmsmasters_comment_item_cont_info {
+			float:none;
+			margin:0;
+		}
+		
+		.cmsmasters_comment_item_cont {
+			overflow:visible;
+		}
+	}
+	
+	.cmsmasters_woo_comments {
+		.cmsmasters_comment_item_date {
+			float:none;
+		}
+		
+		.cmsmasters_star_rating {
+			float:none;
+			margin-left:0;
+		}
+	}
+
+	.widget_shopping_cart {
+		.buttons {
+			.button {
+				width:100%; 
+				margin:0; 
+
+				&.checkout {
+					margin:20px 0 0; 
+				}
+			}
+		}
+	}  
+}
+}
+
